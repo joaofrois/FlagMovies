@@ -1,7 +1,6 @@
 package pt.flag.flagmovies.screens;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -61,6 +60,7 @@ public class HomeScreen extends Screen {
     }
 
     public void setListeners(){
+
 
 
 

@@ -6,7 +6,6 @@ package pt.flag.flagmovies.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 
@@ -30,6 +29,7 @@ public class RecycleViewAdapterMoviesInTheaters extends RecyclerView.Adapter<Rec
     private List<Movie> movieList;
     private Context context;
 
+
     public RecycleViewAdapterMoviesInTheaters(Context context,List<Movie> movieList) {
         this.movieList = movieList;
         this.context=context;
@@ -49,9 +49,6 @@ public class RecycleViewAdapterMoviesInTheaters extends RecyclerView.Adapter<Rec
         final Movie filme = movieList.get(position);
 
         holder.in_theater_title.setText(filme.getOriginalTitle());
-
-        Typeface myCustomFont = Typeface.createFromAsset(context.getAssets(),"fonts/fff_tusj.ttf");
-        holder.in_theater_title.setTypeface(myCustomFont);
 
 
         try
