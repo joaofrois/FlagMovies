@@ -1,11 +1,14 @@
 package pt.flag.flagmovies.screens;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.SearchView;
 
 import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.adapter.RecycleViewAdapterMoviesInTheaters;
@@ -16,12 +19,13 @@ import pt.flag.flagmovies.collections.TVOnAir;
 import pt.flag.flagmovies.collections.MoviesInTheaters;
 import pt.flag.flagmovies.http.entities.MoviesResponse;
 import pt.flag.flagmovies.http.entities.TvResponse;
+import pt.flag.flagmovies.http.requests.SearchMovies;
 
 
 public class HomeScreen extends Screen {
 
-    private EditText searchBar;
-    private ImageButton searchButton;
+    private SearchView searchBar;
+
     private RecyclerView recyclerViewInTheaters;
     private LinearLayoutManager recyclerViewInTheatersLM;
     private RecycleViewAdapterMoviesInTheaters recycleViewAdapter;
@@ -45,15 +49,19 @@ public class HomeScreen extends Screen {
 
     public void findViews(){
         searchBar = findViewById(R.id.home_page_edit_text);
-        searchButton=findViewById(R.id.home_page_image_button);
+
         recyclerViewInTheaters = findViewById(R.id.recycleview_in_theaters);
         recyclerViewOnair = findViewById(R.id.recycleview_in_tv);
+
+
 
 
 
     }
 
     public void setListeners(){
+
+
 
 
     }
@@ -117,4 +125,10 @@ public class HomeScreen extends Screen {
 
 
     }
+
+
+
+
+
+
 

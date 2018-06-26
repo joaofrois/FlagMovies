@@ -7,31 +7,39 @@
 
     >
 
+
     <RelativeLayout
         android:id="@+id/search_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/Gainsboro"
+        android:layout_margin="2dp"
+        android:padding="6dp"
+        android:elevation="16dp"
         >
 
-        <EditText
+        <SearchView
             android:id="@+id/home_page_edit_text"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="@drawable/shadow"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:hint="Search.."
+            android:layout_margin="5dp"
+            android:elevation="200dp"/>
 
-            android:hint="Search.." />
 
-        <ImageButton
-            android:id="@+id/home_page_image_button"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_alignEnd="@+id/home_page_edit_text"
-            android:src="@mipmap/search" />
     </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
     <TextView
         android:id="@+id/title_in_theaters"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/Gainsboro"
         android:text="In Theaters"
         android:gravity="center"
         android:textSize="24sp"/>
@@ -46,6 +54,7 @@
         android:id="@+id/title_in_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/Gainsboro"
         android:text="Tv on the air"
         android:gravity="center"
         android:textSize="24sp"/>
