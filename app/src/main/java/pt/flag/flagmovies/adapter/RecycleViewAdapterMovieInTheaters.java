@@ -24,13 +24,13 @@ import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.http.entities.Movie;
 import pt.flag.flagmovies.screens.MovieDetail;
 
-public class RecycleViewAdapterMoviesInTheaters extends RecyclerView.Adapter<RecycleViewAdapterMoviesInTheaters.ViewHolder> {
+public class RecycleViewAdapterMovieInTheaters extends RecyclerView.Adapter<RecycleViewAdapterMovieInTheaters.ViewHolder> {
 
     private List<Movie> movieList;
     private Context context;
 
 
-    public RecycleViewAdapterMoviesInTheaters(Context context,List<Movie> movieList) {
+    public RecycleViewAdapterMovieInTheaters(Context context, List<Movie> movieList) {
         this.movieList = movieList;
         this.context=context;
 
@@ -38,7 +38,7 @@ public class RecycleViewAdapterMoviesInTheaters extends RecyclerView.Adapter<Rec
 
 
     @Override
-    public RecycleViewAdapterMoviesInTheaters.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecycleViewAdapterMovieInTheaters.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie_in_theater, parent, false);
 
         return new ViewHolder(itemView);

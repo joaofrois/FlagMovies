@@ -17,24 +17,28 @@
         android:elevation="16dp"
         >
 
-        <SearchView
+        <EditText
             android:id="@+id/home_page_edit_text"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/shadow"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+
             android:hint="Search.."
             android:layout_margin="5dp"
-            android:elevation="200dp"/>
+          />
+        <Button
+            android:id="@+id/search_button"
+            android:layout_alignEnd="@+id/home_page_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Go"
+            android:textColor="#ff8800"/>
 
 
     </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-    </LinearLayout>
     <TextView
         android:id="@+id/title_in_theaters"
         android:layout_width="match_parent"

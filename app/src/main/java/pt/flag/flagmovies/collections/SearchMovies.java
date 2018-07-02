@@ -1,8 +1,9 @@
-package pt.flag.flagmovies.http.requests;
+package pt.flag.flagmovies.collections;
 
 import android.content.Context;
 
 import pt.flag.flagmovies.http.entities.SearchResponse;
+import pt.flag.flagmovies.http.requests.ExecuteRequestAsyncTask;
 
 
 public abstract class SearchMovies extends ExecuteRequestAsyncTask<SearchResponse> {
@@ -16,18 +17,18 @@ public abstract class SearchMovies extends ExecuteRequestAsyncTask<SearchRespons
     private static String QUERY_VALUE;
 
 
-    public SearchMovies(Context context) {
+    public SearchMovies(Context context,String queryValue) {
         super(context);
+        QUERY_VALUE = queryValue;
 
 
 
     }
 
-    public static void setQUERY(String QUERY) {
-        SearchMovies.QUERY_VALUE = QUERY;
-    }
 
-    public static String getPATH() {
+
+    @Override
+    protected String getPath() {
         return PATH;
     }
 
