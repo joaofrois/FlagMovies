@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 
@@ -70,6 +71,7 @@ public class RecycleViewAdapterMovieInTheaters extends RecyclerView.Adapter<Recy
                 intent.putExtra("Movie Title", movieList.get(position).getOriginalTitle());
                 intent.putExtra("Movie Poster", movieList.get(position).getPosterURL());
                 intent.putExtra("Description",movieList.get(position).getOverview() );
+                intent.putExtra("Rating", movieList.get(position).getVoteAverage());
 
                 context.startActivity(intent);
 
@@ -99,6 +101,7 @@ public class RecycleViewAdapterMovieInTheaters extends RecyclerView.Adapter<Recy
         private ImageView in_theater_poster;
         private CardView cardView_item_movie_on_air;
         private ImageView movie_detail_poster;
+        private RatingBar ratingBar;
 
 
         public ViewHolder(final View itemView){
@@ -107,6 +110,7 @@ public class RecycleViewAdapterMovieInTheaters extends RecyclerView.Adapter<Recy
             in_theater_poster = (ImageView) itemView.findViewById(R.id.poster_movie_in_theater);
             cardView_item_movie_on_air = (CardView) itemView.findViewById(R.id.cardview_item_movie_on_air);
             movie_detail_poster = (ImageView) itemView.findViewById(R.id.movie_detail_poster);
+            ratingBar = (RatingBar) itemView.findViewById(R.id.rating_movie_detail);
 
 
 

@@ -3,6 +3,7 @@ package pt.flag.flagmovies.screens;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -15,6 +16,7 @@ public class TvDetail extends Screen {
     private TextView title;
     private TextView description;
     private ImageView poster;
+    private RatingBar ratingBar;
 
 
     @Override
@@ -31,6 +33,7 @@ public class TvDetail extends Screen {
         description = findViewById(R.id.tv_detail_description);
         intent = getIntent();
         poster = findViewById(R.id.tv_detail_poster);
+        ratingBar = findViewById(R.id.rating_tv_detail);
     }
 
     private void receiveData(){
@@ -40,6 +43,9 @@ public class TvDetail extends Screen {
         String tvposter = intent.getExtras().getString("TvShow Poster");
         title.setText(tvtitle);
         description.setText(tvdescription);
+        float rating =intent.getExtras().getFloat("Rating");
+        float rating_converted = (rating*5)/10;
+        ratingBar.setRating(rating_converted);
 
         Picasso.get().load(tvposter).into(poster);
     }

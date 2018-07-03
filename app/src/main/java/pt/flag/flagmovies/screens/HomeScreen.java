@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 
 import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.adapter.RecycleViewAdapterMovieInTheaters;
@@ -23,7 +24,7 @@ public class HomeScreen extends Screen {
 
     private EditText editText;
     private Button button;
-
+    private RatingBar ratingBar;
 
     private RecyclerView recyclerViewInTheaters;
     private LinearLayoutManager recyclerViewInTheatersLM;
@@ -51,6 +52,7 @@ public class HomeScreen extends Screen {
         button = findViewById(R.id.search_button);
         recyclerViewInTheaters = findViewById(R.id.recycleview_in_theaters);
         recyclerViewOnair = findViewById(R.id.recycleview_in_tv);
+        ratingBar = findViewById(R.id.rating_movie_in_theater);
 
 
 

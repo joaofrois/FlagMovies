@@ -34,7 +34,7 @@ public class TvShow {
     private Integer voteCount;
 
     @SerializedName("vote_average")
-    private Double voteAverage;
+    private Float voteAverage;
 
     public String getPosterPath() {
         return posterPath;
@@ -72,7 +72,7 @@ public class TvShow {
         return voteCount;
     }
 
-    public Double getVoteAverage() {
+    public Float getVoteAverage() {
         return voteAverage;
     }
 

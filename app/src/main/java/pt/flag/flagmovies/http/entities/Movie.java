@@ -40,7 +40,7 @@ public class Movie {
     private Integer voteCount;
 
     @SerializedName("vote_average")
-    private Double voteAverage;
+    private Float voteAverage;
 
     @SerializedName("id")
     private Integer movieid;
@@ -81,7 +81,7 @@ public class Movie {
         return voteCount;
     }
 
-    public Double getVoteAverage() {
+    public Float getVoteAverage() {
         return voteAverage;
     }
 

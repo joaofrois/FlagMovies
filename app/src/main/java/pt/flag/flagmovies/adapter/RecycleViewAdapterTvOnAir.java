@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -69,6 +70,7 @@ public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewA
                 intent.putExtra("TvShow Title", tvshowList.get(position).getOriginalTitle());
                 intent.putExtra("TvShow Poster", tvshowList.get(position).getPosterURL());
                 intent.putExtra("Description",tvshowList.get(position).getOverview() );
+                intent.putExtra("Rating", tvshowList.get(position).getVoteAverage());
 
                 context.startActivity(intent);
 
@@ -94,6 +96,7 @@ public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewA
         private ImageView poster_tv_on_air;
         private CardView cardView_item_tv_on_air;
         private ImageView tv_detail_poster;
+        private RatingBar ratingBar_tv_detail;
 
 
         public ViewHolder(final View itemView){
@@ -102,6 +105,7 @@ public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewA
             poster_tv_on_air = (ImageView) itemView.findViewById(R.id.poster_tv_on_air);
             cardView_item_tv_on_air = (CardView) itemView.findViewById(R.id.cardview_item_tv_on_air);
             tv_detail_poster = (ImageView) itemView.findViewById(R.id.tv_detail_poster);
+            ratingBar_tv_detail = (RatingBar) itemView.findViewById(R.id.rating_tv_detail);
 
 
 
