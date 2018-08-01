@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/DimGray"
     >
 
 
@@ -15,12 +16,29 @@
         android:layout_height="290dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"/>
+
+
+    <RatingBar
+        android:id="@+id/rating_tv_detail"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/tv_detail_poster"
+        android:elevation="10dp"
+        android:stepSize="1.0"
+        android:numStars="5"
+        />
     <TextView
         android:id="@+id/tv_detail_title"
-        android:layout_below="@+id/tv_detail_poster"
+        android:layout_below="@+id/rating_tv_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Title"
+        android:textSize="30dp"
+        android:textColor="@color/Gainsboro"
         android:gravity="center"
 
         />
@@ -41,22 +59,12 @@
             android:layout_height="100dp"
             android:gravity="center"
             android:text=""
+            android:textSize="20dp"
+            android:textColor="@color/Gainsboro"
             />
 
 
     </android.support.v4.widget.NestedScrollView>
-
-    <RatingBar
-        android:id="@+id/rating_tv_detail"
-        style="?android:attr/ratingBarStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:elevation="10dp"
-        android:stepSize="1.0"
-        android:numStars="5"
-        />
 
 
 

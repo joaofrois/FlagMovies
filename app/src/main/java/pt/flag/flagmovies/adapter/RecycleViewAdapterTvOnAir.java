@@ -48,6 +48,11 @@ public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewA
 
         holder.title_tv_on_air.setText(tvshow.getOriginalTitle());
 
+        float rating =tvshowList.get(position).getVoteAverage();
+        float rating_converted = (rating*5)/10;
+        System.out.println(rating_converted);
+        holder.ratingBar_tv_detail.setRating(rating_converted);
+
         try
         {
             if(!tvshow.getPosterURL().equals("null")) {
@@ -71,6 +76,7 @@ public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewA
                 intent.putExtra("TvShow Poster", tvshowList.get(position).getPosterURL());
                 intent.putExtra("Description",tvshowList.get(position).getOverview() );
                 intent.putExtra("Rating", tvshowList.get(position).getVoteAverage());
+
 
                 context.startActivity(intent);
 
@@ -105,7 +111,7 @@ public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewA
             poster_tv_on_air = (ImageView) itemView.findViewById(R.id.poster_tv_on_air);
             cardView_item_tv_on_air = (CardView) itemView.findViewById(R.id.cardview_item_tv_on_air);
             tv_detail_poster = (ImageView) itemView.findViewById(R.id.tv_detail_poster);
-            ratingBar_tv_detail = (RatingBar) itemView.findViewById(R.id.rating_tv_detail);
+            ratingBar_tv_detail = (RatingBar) itemView.findViewById(R.id.rating_tv_on_air);
 
 
 

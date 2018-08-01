@@ -51,6 +51,12 @@ public class RecycleViewAdapterMovieInTheaters extends RecyclerView.Adapter<Recy
 
         holder.in_theater_title.setText(filme.getOriginalTitle());
 
+        float rating =movieList.get(position).getVoteAverage();
+        float rating_converted = (rating*5)/10;
+        System.out.println(rating_converted);
+        holder.ratingBar.setRating(rating_converted);
+
+
 
         try
         {
@@ -72,6 +78,11 @@ public class RecycleViewAdapterMovieInTheaters extends RecyclerView.Adapter<Recy
                 intent.putExtra("Movie Poster", movieList.get(position).getPosterURL());
                 intent.putExtra("Description",movieList.get(position).getOverview() );
                 intent.putExtra("Rating", movieList.get(position).getVoteAverage());
+                intent.putExtra("Id", movieList.get(position).getMovieid());
+
+
+
+
 
                 context.startActivity(intent);
 
@@ -110,7 +121,7 @@ public class RecycleViewAdapterMovieInTheaters extends RecyclerView.Adapter<Recy
             in_theater_poster = (ImageView) itemView.findViewById(R.id.poster_movie_in_theater);
             cardView_item_movie_on_air = (CardView) itemView.findViewById(R.id.cardview_item_movie_on_air);
             movie_detail_poster = (ImageView) itemView.findViewById(R.id.movie_detail_poster);
-            ratingBar = (RatingBar) itemView.findViewById(R.id.rating_movie_detail);
+            ratingBar = (RatingBar) itemView.findViewById(R.id.rating_movie_in_theater);
 
 
 

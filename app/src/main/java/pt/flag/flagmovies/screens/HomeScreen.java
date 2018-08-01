@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
 import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.adapter.RecycleViewAdapterMovieInTheaters;
@@ -105,7 +106,8 @@ public class HomeScreen extends Screen {
 
             @Override
             protected void onNetworkError() {
-                System.out.println("Ola");
+                Toast toast = Toast.makeText(HomeScreen.this, "No Internet Connection", Toast.LENGTH_LONG);
+                toast.show();
 
             }
         }.execute();
@@ -127,7 +129,8 @@ public class HomeScreen extends Screen {
 
             @Override
             protected void onNetworkError() {
-                System.out.println("Ola");
+                Toast toast = Toast.makeText(HomeScreen.this, "No Internet Connection", Toast.LENGTH_LONG);
+                toast.show();
 
             }
         }.execute();

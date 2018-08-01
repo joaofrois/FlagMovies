@@ -2,9 +2,12 @@ package pt.flag.flagmovies.screens;
 
 
 import android.animation.Animator;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import pt.flag.flagmovies.R;
 
@@ -37,9 +40,12 @@ public class SplashScreen extends Screen {
             }
 
             @Override
-            public void onAnimationEnd(Animator animation) {
+            public void onAnimationEnd(Animator animation)
+            {
                 startActivity(new Intent(SplashScreen.this, HomeScreen.class));
                 finish();
+
+
             }
 
             @Override

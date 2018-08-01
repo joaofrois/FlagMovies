@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -43,6 +44,10 @@ public class RecycleViewAdapterSearchResults extends RecyclerView.Adapter<Recycl
         final Movie filme = resultList.get(position);
 
         holder.in_theater_title.setText(filme.getOriginalTitle());
+        float rating =resultList.get(position).getVoteAverage();
+        float rating_converted = (rating*5)/10;
+        System.out.println(rating_converted);
+        holder.ratingBar.setRating(rating_converted);
 
 
         try
@@ -64,6 +69,8 @@ public class RecycleViewAdapterSearchResults extends RecyclerView.Adapter<Recycl
                 intent.putExtra("Movie Title", resultList.get(position).getOriginalTitle());
                 intent.putExtra("Movie Poster", resultList.get(position).getPosterURL());
                 intent.putExtra("Description",resultList.get(position).getOverview() );
+                intent.putExtra("Rating", resultList.get(position).getVoteAverage());
+                intent.putExtra("Id", resultList.get(position).getMovieid());
 
                 context.startActivity(intent);
 
@@ -86,6 +93,7 @@ public class RecycleViewAdapterSearchResults extends RecyclerView.Adapter<Recycl
         private ImageView in_theater_poster;
         private CardView cardView_item_movie_on_air;
         private ImageView movie_detail_poster;
+        private RatingBar ratingBar;
 
 
         public ViewHolder(final View itemView){
@@ -94,6 +102,7 @@ public class RecycleViewAdapterSearchResults extends RecyclerView.Adapter<Recycl
             in_theater_poster = (ImageView) itemView.findViewById(R.id.poster_movie_in_theater);
             cardView_item_movie_on_air = (CardView) itemView.findViewById(R.id.cardview_item_movie_on_air);
             movie_detail_poster = (ImageView) itemView.findViewById(R.id.movie_detail_poster);
+            ratingBar = (RatingBar) itemView.findViewById(R.id.rating_movie_in_theater);
 
 
 

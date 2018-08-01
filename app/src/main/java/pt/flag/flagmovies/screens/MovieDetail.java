@@ -1,7 +1,10 @@
 package pt.flag.flagmovies.screens;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -17,6 +20,7 @@ public class MovieDetail extends Screen {
     private TextView description;
     private ImageView poster;
     private RatingBar ratingBar;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class MovieDetail extends Screen {
         intent = getIntent();
         poster = findViewById(R.id.movie_detail_poster);
         ratingBar = findViewById(R.id.rating_movie_detail);
+        button = findViewById(R.id.movie_page);
 
     }
 
@@ -47,8 +52,23 @@ public class MovieDetail extends Screen {
         float rating =intent.getExtras().getFloat("Rating");
         float rating_converted = (rating*5)/10;
         ratingBar.setRating(rating_converted);
+        final String url ="https://www.themoviedb.org/movie/"+ intent.getExtras().getInt("Id");
+        System.out.println(url);
 
         Picasso.get().load(movieposter).into(poster);
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println(url);
+                Intent i = null;
+
+                i = new   Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(i);
+
+            }
+        });
 
 
 
